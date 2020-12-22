@@ -1,26 +1,22 @@
+import ButtonAppBar from "./components/Appbar";
+import axios from "axios";
 import { useState } from "react";
 
-function Alaskdj(props) {
+function App() {
+  const [data, setData] = useState("");
+
+  axios.get("https://jsonplaceholder.typicode.com/posts/1").then((response) => {
+    console.log(response);
+    setData(JSON.stringify(response.data));
+    return response.data;
+  });
+  // Vamos a buscar un listado de cosas, y vamos a renderizar un listado de cosas
+  
   return (
     <>
-      <div>{props.asd}</div>
+      <ButtonAppBar />
+      {data}
     </>
-  );
-}
-
-function App() {
-  const [counter, setCounter] = useState(0);
-
-  function aumentarContador() {
-    setCounter(counter + 1);
-  }
-
-  return (
-    <div>
-      <h1>{counter}</h1>
-      <button onClick={aumentarContador}>CONTAR</button>
-      <Alaskdj asd={counter}></Alaskdj>
-    </div>
   );
 }
 
