@@ -1,22 +1,20 @@
-import ButtonAppBar from "./components/Appbar";
-import axios from "axios";
-import { useState } from "react";
+import React from 'react';
+import { Router } from 'react-router-dom';
+import { createBrowserHistory } from 'history';
+import { ThemeProvider } from '@material-ui/styles';
+import theme from './theme';
+import Routes from './Routes';
+
+const browserHistory = createBrowserHistory();
 
 function App() {
-  const [data, setData] = useState("");
-
-  axios.get("https://jsonplaceholder.typicode.com/posts/1").then((response) => {
-    console.log(response);
-    setData(JSON.stringify(response.data));
-    return response.data;
-  });
-  // Vamos a buscar un listado de cosas, y vamos a renderizar un listado de cosas
-  
   return (
-    <>
-      <ButtonAppBar />
-      {data}
-    </>
+    <ThemeProvider theme={theme}>
+      <Router history={browserHistory}>
+        <Routes />
+      </Router>
+    </ThemeProvider>
+    
   );
 }
 
