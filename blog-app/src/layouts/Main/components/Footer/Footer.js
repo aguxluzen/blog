@@ -7,14 +7,14 @@ import { Typography, Link } from '@material-ui/core';
 const useStyles = makeStyles(theme => ({
   root: {
     padding: theme.spacing(4)
-  }
+  },
 }));
 
 const Footer = props => {
   const { className, ...rest } = props;
 
   const classes = useStyles();
-
+  
   return (
     <div
       {...rest}

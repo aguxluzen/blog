@@ -2,15 +2,13 @@ import React from 'react';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/styles';
-import { Divider, Drawer } from '@material-ui/core';
+import { Drawer } from '@material-ui/core';
 import DashboardIcon from '@material-ui/icons/Dashboard';
+import DragIndicatorIcon from '@material-ui/icons/DragIndicator';
 import PeopleIcon from '@material-ui/icons/People';
-import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
-import TextFieldsIcon from '@material-ui/icons/TextFields';
-import ImageIcon from '@material-ui/icons/Image';
+import LocationCityIcon from '@material-ui/icons/LocationCity';
 import AccountBoxIcon from '@material-ui/icons/AccountBox';
 import SettingsIcon from '@material-ui/icons/Settings';
-import LockOpenIcon from '@material-ui/icons/LockOpen';
 
 import { SidebarNav } from './components';
 
@@ -49,37 +47,27 @@ const Sidebar = props => {
       icon: <DashboardIcon />
     },
     {
-      title: 'Users',
-      href: '/users',
+      title: 'Secciones',
+      href: '/sections',
+      icon: <DragIndicatorIcon />
+    },
+    {
+      title: 'Comunidad',
+      href: '/community',
       icon: <PeopleIcon />
     },
     {
-      title: 'Products',
-      href: '/products',
-      icon: <ShoppingBasketIcon />
+      title: 'Institucional',
+      href: '/institutional',
+      icon: <LocationCityIcon />
     },
     {
-      title: 'Authentication',
-      href: '/sign-in',
-      icon: <LockOpenIcon />
-    },
-    {
-      title: 'Typography',
-      href: '/typography',
-      icon: <TextFieldsIcon />
-    },
-    {
-      title: 'Icons',
-      href: '/icons',
-      icon: <ImageIcon />
-    },
-    {
-      title: 'Account',
-      href: '/account',
+      title: 'Contactanos',
+      href: '/contact',
       icon: <AccountBoxIcon />
     },
     {
-      title: 'Settings',
+      title: 'Configuración',
       href: '/settings',
       icon: <SettingsIcon />
     }
