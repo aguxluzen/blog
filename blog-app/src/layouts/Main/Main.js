@@ -14,11 +14,9 @@ const useStyles = makeStyles(theme => ({
       paddingTop: 64
     }
   },
-  shiftContent: {
-    paddingLeft: 240
-  },
   content: {
-    height: '100%'
+    marginRight: '5vw',
+    marginLeft: '5vw'
   }
 }));
 
@@ -58,7 +56,7 @@ const Main = props => {
       />
       <main className={classes.content}>
         {children}
-        <Footer />
+        {/* <Footer /> */}
       </main>
     </div>
   );

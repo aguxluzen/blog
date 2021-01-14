@@ -12,12 +12,6 @@ const useStyles = makeStyles(theme => ({
   root: {
     boxShadow: 'none'
   },
-  flexGrow: {
-    flexGrow: 1
-  },
-  signOutButton: {
-    marginLeft: theme.spacing(1)
-  }
 }));
 
 const Topbar = props => {
@@ -25,44 +19,13 @@ const Topbar = props => {
 
   const classes = useStyles();
 
-  const [notifications] = useState([]);
-
   return (
     <AppBar
       {...rest}
       className={clsx(classes.root, className)}
     >
       <Toolbar>
-        <IconButton
-            color="inherit"
-            onClick={onSidebarOpen}
-        >
-            <MenuIcon />
-        </IconButton>
-        <RouterLink to="/">
-          <img
-            alt="Blog"
-            src="/images/logos/logo--white.svg"
-          />
-        </RouterLink>
-        <div className={classes.flexGrow} />
-        <Hidden mdDown>
-          <IconButton color="inherit">
-            <Badge
-              badgeContent={notifications.length}
-              color="primary"
-              variant="dot"
-            >
-              <NotificationsIcon />
-            </Badge>
-          </IconButton>
-          <IconButton
-            className={classes.signOutButton}
-            color="inherit"
-          >
-            <InputIcon />
-          </IconButton>
-        </Hidden>
+
       </Toolbar>
     </AppBar>
   );
