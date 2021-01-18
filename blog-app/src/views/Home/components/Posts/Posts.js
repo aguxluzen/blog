@@ -9,11 +9,7 @@ const useStyles = makeStyles({
   },
   media: {
     height: 140,
-  },/* 
-  item: {
-    marginRight: '5vw',
-    marginLeft: '5vw',
-  } */
+  },
 });
 
 const misDatos = [
@@ -40,8 +36,9 @@ function Posts() {
   return (
     <>
       <Grid container spacing={2}>
-        <Grid item xs={12} sm={4} className={classes.item}>
+        <Grid item xs={12} sm={4}>
           <Box
+            marginLeft='5vw'
             display="flex"
             justifyContent="left"
             alignItems="left"
@@ -50,7 +47,7 @@ function Posts() {
             <Post />
           </Box>
         </Grid>
-        <Grid item xs={12} sm={3}>
+        <Grid item xs={12} sm={4}>
           <Box
             display="flex"
             justifyContent="center"
@@ -60,13 +57,13 @@ function Posts() {
             <Post />
           </Box>
         </Grid>
-        <Grid item xs={12} sm={3}>
-          {/* <Box 
-            marginLeft="5vw"
+        <Grid item xs={12} sm={4}>
+          <Box 
+            marginRight="5vw"
             display="flex"  
             flexDirection="row-reverse">
             <Post />
-          </Box> */}
+          </Box>
         </Grid>
       </Grid>
     </>

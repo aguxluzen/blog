@@ -9,7 +9,6 @@ const useStyles = makeStyles((theme) => ({
   img: {
     display: "flex",
     height: "50vh",
-    width: "100vw",
     background: "#000",
   },
   text: {
@@ -27,7 +26,7 @@ function Carousel() {
 
   return (
     <>
-      <Grid container style={{ width: "100%" }}>
+      <Grid container>
         <Grid item style={{ width: "100%" }}>
           <div>
             <Box className={classes.img}>
