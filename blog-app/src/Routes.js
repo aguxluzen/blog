@@ -3,7 +3,7 @@ import { Switch, Redirect } from 'react-router-dom';
 
 import { RouteWithLayout } from './components';
 import { Main as MainLayout } from './layouts';
-import { Dashboard as DashboardView, Settings as SettingsView,
+import { Home as HomeView, Settings as SettingsView,
   Sections as SectionsView, Community as CommunityView,
   Institutional as InstitutionalView, Contact as ContactView } from './views';
 
@@ -13,13 +13,13 @@ const Routes = () => {
       <Redirect
         exact
         from="/"
-        to="/dashboard"
+        to="/home"
       />
       <RouteWithLayout
-        component={DashboardView}
+        component={HomeView}
         exact
         layout={MainLayout}
-        path="/dashboard"
+        path="/home"
       />
       <RouteWithLayout
         component={SectionsView}
