@@ -3,10 +3,9 @@ import { Link as RouterLink } from 'react-router-dom';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/styles';
-import { AppBar, Toolbar, Badge, Hidden, IconButton } from '@material-ui/core';
-import MenuIcon from '@material-ui/icons/Menu';
-import NotificationsIcon from '@material-ui/icons/NotificationsOutlined';
-import InputIcon from '@material-ui/icons/Input';
+import { AppBar, Toolbar, Hidden, IconButton } from '@material-ui/core';
+
+import { SidebarNav } from '../Sidebar/components';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -16,49 +15,48 @@ const useStyles = makeStyles(theme => ({
   flexGrow: {
     flexGrow: "1",
   },
-  signOutButton: {
+  button: {
     marginLeft: theme.spacing(2)
   }
 }));
 
+const pages = [
+  {
+    title: 'Secciones',
+    href: '/sections',
+  },
+  {
+    title: 'Comunidad',
+    href: '/community',
+  },
+  {
+    title: 'Institucional',
+    href: '/institutional',
+  },
+  {
+    title: 'Contactanos',
+    href: '/contact',
+  }
+];
+
 const Topbar = props => {
 
+  const { open, variant, onClose, className, ...rest } = props;
   const classes = useStyles();
-  const [notifications] = useState([]);
 
   return (
     <AppBar>
       <Toolbar style={{marginRight:'3vw'}}>
         <div className={classes.flexGrow} />
-          <Hidden mdDown>
-            <IconButton color="inherit">
-              <h7>Secciones</h7>
-              <Badge
-                badgeContent={notifications.length}
-                color="primary"
-                variant="dot"
-              >
-              </Badge>
-            </IconButton>
-            <IconButton
-              className={classes.signOutButton}
-              color="inherit"
-            >
-              <h7>Comunidad</h7>
-            </IconButton>
-            <IconButton
-              className={classes.signOutButton}
-              color="inherit"
-            >
-              <h7>Institucional</h7>
-            </IconButton>
-            <IconButton
-              className={classes.signOutButton}
-              color="inherit"
-            >
-              <h7>Contactanos</h7>
-            </IconButton>
-          </Hidden> 
+          <div
+        {...rest}
+        className={clsx(classes.root, className)}
+      >
+        <SidebarNav
+          className={classes.nav}
+          pages={pages}
+        />
+      </div>
       </Toolbar>
     </AppBar>
   );

@@ -3,12 +3,10 @@ import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/styles';
 import { Drawer } from '@material-ui/core';
-import DashboardIcon from '@material-ui/icons/Dashboard';
 import DragIndicatorIcon from '@material-ui/icons/DragIndicator';
 import PeopleIcon from '@material-ui/icons/People';
 import LocationCityIcon from '@material-ui/icons/LocationCity';
 import AccountBoxIcon from '@material-ui/icons/AccountBox';
-import SettingsIcon from '@material-ui/icons/Settings';
 
 import { SidebarNav } from './components';
 
@@ -17,13 +15,12 @@ const useStyles = makeStyles(theme => ({
     width: 240,
     [theme.breakpoints.up('lg')]: {
       marginTop: 64,
-      height: 'calc(100% - 64px)'
+      height: 'calc(100% - 64px)',
     }
   },
   root: {
     backgroundColor: theme.palette.white,
     display: 'flex',
-    flexDirection: 'column',
     height: '100%',
     padding: theme.spacing(2)
   },
@@ -41,11 +38,6 @@ const Sidebar = props => {
   const classes = useStyles();
 
   const pages = [
-    {
-      title: 'Dashboard',
-      href: '/dashboard',
-      icon: <DashboardIcon />
-    },
     {
       title: 'Secciones',
       href: '/sections',
@@ -65,11 +57,6 @@ const Sidebar = props => {
       title: 'Contactanos',
       href: '/contact',
       icon: <AccountBoxIcon />
-    },
-    {
-      title: 'Configuración',
-      href: '/settings',
-      icon: <SettingsIcon />
     }
   ];
 
