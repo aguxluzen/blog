@@ -33,7 +33,7 @@ function Carousel() {
               <img
                 alt="imag"
                 style={{ width: "100%" }}
-                src={images.img1}
+                src={images.img}
               />
               <div className={classes.text}>
                 <div className={classes.titulo}>

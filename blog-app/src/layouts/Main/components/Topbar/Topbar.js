@@ -25,7 +25,6 @@ const Topbar = props => {
       className={clsx(classes.root, className)}
     >
       <Toolbar>
-
       </Toolbar>
     </AppBar>
   );
