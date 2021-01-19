@@ -5,6 +5,10 @@ import Carousel from "./components/Carousel";
 import Posts from "./components/Posts";
 
 const useStyles = makeStyles((theme) => ({
+  cont: {
+    marginTop:"5vh",
+    marginBottom:"5vh",
+  }
   
 }));
 
@@ -14,7 +18,7 @@ const Home = () => {
   return (
     <>
       <Carousel/>
-      <Box style={{marginTop:"5vh"}}>
+      <Box className={classes.cont}>
         <Posts />
       </Box>
     </>

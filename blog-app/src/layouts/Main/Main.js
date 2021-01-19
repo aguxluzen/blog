@@ -10,6 +10,7 @@ const useStyles = makeStyles(theme => ({
   root: {
     paddingTop: 56,
     height: '100%',
+    marginDown: '15vh',
     [theme.breakpoints.up('sm')]: {
       paddingTop: 64
     }
