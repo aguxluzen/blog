@@ -10,21 +10,55 @@ import InputIcon from '@material-ui/icons/Input';
 
 const useStyles = makeStyles(theme => ({
   root: {
-    boxShadow: 'none'
+    boxShadow: 'none',
+    marginRight:"0vw",
   },
+  flexGrow: {
+    flexGrow: "1",
+  },
+  signOutButton: {
+    marginLeft: theme.spacing(2)
+  }
 }));
 
 const Topbar = props => {
-  const { className, onSidebarOpen, ...rest } = props;
 
   const classes = useStyles();
+  const [notifications] = useState([]);
 
   return (
-    <AppBar
-      {...rest}
-      className={clsx(classes.root, className)}
-    >
-      <Toolbar>
+    <AppBar>
+      <Toolbar style={{marginRight:'3vw'}}>
+        <div className={classes.flexGrow} />
+          <Hidden mdDown>
+            <IconButton color="inherit">
+              <h7>Secciones</h7>
+              <Badge
+                badgeContent={notifications.length}
+                color="primary"
+                variant="dot"
+              >
+              </Badge>
+            </IconButton>
+            <IconButton
+              className={classes.signOutButton}
+              color="inherit"
+            >
+              <h7>Comunidad</h7>
+            </IconButton>
+            <IconButton
+              className={classes.signOutButton}
+              color="inherit"
+            >
+              <h7>Institucional</h7>
+            </IconButton>
+            <IconButton
+              className={classes.signOutButton}
+              color="inherit"
+            >
+              <h7>Contactanos</h7>
+            </IconButton>
+          </Hidden> 
       </Toolbar>
     </AppBar>
   );
