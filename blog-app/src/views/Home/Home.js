@@ -7,7 +7,7 @@ import Posts from "./components/Posts";
 const useStyles = makeStyles((theme) => ({
   cont: {
     marginTop:"5vh",
-    marginBottom:"10vh",
+    marginBottom:"5vh",
   }
   
 }));

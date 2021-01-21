@@ -3,22 +3,17 @@ import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/styles';
 import { Typography, Link, Grid, Box } from '@material-ui/core';
-import InstagramIcon from '@material-ui/icons/Instagram';
-import FacebookIcon from '@material-ui/icons/Facebook';
-import TwitterIcon from '@material-ui/icons/Twitter';
-import { Instagram, Twitter } from '@material-ui/icons';
+import { Instagram, Twitter, Facebook } from '@material-ui/icons';
 
 const useStyles = makeStyles(theme => ({
   root: {
     padding: theme.spacing(3),
-    background: "#ffea00",
-  },
-  container: { 
-    flexDirection:'row-reverse',
-  },
-  icons: {
-    marginRight:"3.5vw",
-  },
+    background: "#e3f2fd",
+  },  
+  icon: {
+    marginLeft:"1vw",
+    marginRight:"1vw",
+  }
 }));
 
 const Footer = props => {
@@ -31,9 +26,9 @@ const Footer = props => {
       {...rest}
       className={clsx(classes.root, className)}
     >
-      <Grid container className={classes.container}>
+      <Grid container >
         <Grid item>
-          {/* <Typography variant="body1" color="inherit">
+          <Typography variant="body1" color="inherit">
             &copy;{' '}
             <Link
               component="a"
@@ -47,12 +42,27 @@ const Footer = props => {
           <Typography variant="caption" color="inherit">
             Created with love for the environment. By designers and developers who
             love to work together in offices!
-          </Typography> */}
+          </Typography>
           </Grid>
-            <Grid item className={classes.icons} >
-              <Instagram/>
-              <FacebookIcon/>
-              <Twitter/> 
+            <Grid item style={{marginLeft:"54vw"}}>
+              <Link
+                href="https://www.instagram.com/"
+                target="_blank"
+              >
+                <Instagram/>
+              </Link>
+              <Link
+                href="https://twitter.com/"
+                target="_blank"
+              >
+                <Twitter className={classes.icon}/>
+              </Link>
+              <Link
+                href="https://es-la.facebook.com/"
+                target="_blank"
+              >
+                <Facebook/>
+              </Link>
             </Grid> 
       </Grid>
     </div>

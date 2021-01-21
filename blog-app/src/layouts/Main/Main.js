@@ -38,7 +38,7 @@ const Main = props => {
         [classes.shiftContent]: isDesktop
       })}
     >
-      <Topbar  />
+      <Topbar/>
       <main className={classes.content}>
         {children}
         <Footer/>
