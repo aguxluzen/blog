@@ -31,18 +31,6 @@ const Main = props => {
     defaultMatches: true
   });
 
-  const [openSidebar, setOpenSidebar] = useState(false);
-
-  const handleSidebarOpen = () => {
-    setOpenSidebar(true);
-  };
-
-  const handleSidebarClose = () => {
-    setOpenSidebar(false);
-  };
-
-  const shouldOpenSidebar = openSidebar;
-
   return (
     <div
       className={clsx({
@@ -51,14 +39,9 @@ const Main = props => {
       })}
     >
       <Topbar  />
-      <Sidebar
-        onClose={handleSidebarClose}
-        open={shouldOpenSidebar}
-        variant={'temporary'}
-      />
       <main className={classes.content}>
         {children}
-        {/* <Footer /> */}
+        <Footer/>
       </main>
     </div>
   );

@@ -37,55 +37,10 @@ const Sidebar = props => {
 
   const classes = useStyles();
 
-  const pages = [
-    {
-      title: 'Secciones',
-      href: '/sections',
-      icon: <DragIndicatorIcon />
-    },
-    {
-      title: 'Comunidad',
-      href: '/community',
-      icon: <PeopleIcon />
-    },
-    {
-      title: 'Institucional',
-      href: '/institutional',
-      icon: <LocationCityIcon />
-    },
-    {
-      title: 'Contactanos',
-      href: '/contact',
-      icon: <AccountBoxIcon />
-    }
-  ];
-
   return (
-    <Drawer
-      anchor="left"
-      classes={{ paper: classes.drawer }}
-      onClose={onClose}
-      open={open}
-      variant={variant}
-    >
-      <div
-        {...rest}
-        className={clsx(classes.root, className)}
-      >
-        <SidebarNav
-          className={classes.nav}
-          pages={pages}
-        />
-      </div>
-    </Drawer>
+    <div>
+    </div>
   );
-};
-
-Sidebar.propTypes = {
-  className: PropTypes.string,
-  onClose: PropTypes.func,
-  open: PropTypes.bool.isRequired,
-  variant: PropTypes.string.isRequired
 };
 
 export default Sidebar;

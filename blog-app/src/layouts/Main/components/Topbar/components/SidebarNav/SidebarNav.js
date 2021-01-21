@@ -1,9 +1,8 @@
 import React, { forwardRef } from 'react';
 import { NavLink as RouterLink } from 'react-router-dom';
 import clsx from 'clsx';
-import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/styles';
-import { List, ListItem, Button, colors } from '@material-ui/core';
+import { List, ListItem, Button } from '@material-ui/core';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -45,23 +44,20 @@ const SidebarNav = props => {
           key={page.title}
         >
           <Button
+            color="inherit"
             activeClassName={classes.active}
             className={classes.button}
             component={CustomRouterLink}
             to={page.href}
           >
-            <div></div>
-            {page.title}
+            <div>
+             {page.title}
+            </div>
           </Button>
         </ListItem>
       ))}
     </List>
   );
-};
-
-SidebarNav.propTypes = {
-  className: PropTypes.string,
-  pages: PropTypes.array.isRequired
 };
 
 export default SidebarNav;
