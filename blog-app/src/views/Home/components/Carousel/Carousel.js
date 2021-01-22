@@ -1,5 +1,5 @@
 import { makeStyles } from "@material-ui/styles";
-import { Grid, Box } from "@material-ui/core";
+import { Typography, Grid, Box } from "@material-ui/core";
 import images from "../../../../assets/images";
 
 const useStyles = makeStyles((theme) => ({
