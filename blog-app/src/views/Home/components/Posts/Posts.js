@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('md')]: {
       justifyContent:"center",
       alignItems:"center",
-      margin:"0",
+      margin:"0", 
   },
     marginLeft:'5vw',
     display:"flex",
@@ -80,21 +80,6 @@ function Posts() {
         </Grid>
         <Grid item xs={12} sm={4}>
           <Box className={classes.rightBox}>
-            <Post />
-          </Box>
-        </Grid>
-        <Grid item xs={12} sm={4} style={{marginTop:"5vh"}}>
-          <Box className={classes.leftBox}>
-            <Post />
-          </Box>
-        </Grid>
-        <Grid item xs={12} sm={4}>
-          <Box className={classes.centerBox} style={{marginTop:"5vh"}}>
-            <Post />
-          </Box>
-        </Grid>
-        <Grid item xs={12} sm={4}>
-          <Box className={classes.rightBox} style={{marginTop:"5vh"}}>
             <Post />
           </Box>
         </Grid>

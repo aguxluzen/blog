@@ -8,27 +8,30 @@ const useStyles = makeStyles(theme => ({
   root: {
     padding: theme.spacing(2),
     background: "#eceff1",
+    
   },  
   icon: {
     marginLeft:"1vw",
     marginRight:"1vw",
   },
+  container:{
+    display:"flex",
+    widht:"100%",
+    justifyContent:"space-between",
+    alignItems:"center",
+  },
   item: {
-    [theme.breakpoints.down('md')]: {
-      justifyContent:"left",
-      alignItems:"left",
-      marginLeft:"0vw",
+    [theme.breakpoints.down('sm')]: {
       order:"2",
     },
-    marginLeft:'3.5vw',
+    marginLeft: "4vw",  
+  },
+  item2:{
+    alignSelf:"flex-end",
+    marginRight:"4vw",
   },
   socialMedia: {
-    [theme.breakpoints.down('md')]: {
-      justifyContent:"right",
-      alignItems:"right",
-      marginLeft:"69vw",
-    },
-    marginLeft: "53vw",
+    justifyContent:"flex-end",
   },
 }));
 
@@ -42,7 +45,7 @@ const Footer = props => {
       {...rest}
       className={clsx(classes.root, className)}
     >
-      <Grid container style={{widht:"100%"}}>
+      <Grid container className={classes.container}>
         <Grid item className={classes.item}>
           <Box>
             <Typography variant="body1" color="inherit">
@@ -61,7 +64,7 @@ const Footer = props => {
             </Typography>
           </Box>  
         </Grid>
-        <Grid item style={{widht:"100%", display:"flex"}}>
+        <Grid item className={classes.item2}>
           <Box className={classes.socialMedia}>
             <Link
               href="https://www.instagram.com/"
@@ -80,8 +83,8 @@ const Footer = props => {
               target="_blank"
             >
               <Facebook/>
-            </Link>
-          </Box>    
+            </Link>  
+          </Box> 
         </Grid> 
       </Grid>
     </div>
