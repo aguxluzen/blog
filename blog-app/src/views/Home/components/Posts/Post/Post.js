@@ -17,6 +17,7 @@ const useStyles = makeStyles({
   },
 });
 
+//TODO Recibir post por prop y mostrar. 
 function Post() {
   const classes = useStyles();
 
@@ -40,6 +41,7 @@ function Post() {
       </CardActionArea>
       <CardActions>
         <Button size="small" color="primary">
+          {/* Cuando haga clic en algun lado (el que quieran) hacer algo */}
           Share
         </Button>
         <Button size="small" color="primary">

@@ -49,7 +49,7 @@ const Footer = props => {
         <Grid item className={classes.item}>
           <Box>
             <Typography variant="body1" color="inherit">
-              &copy;{' '}
+              &copy;
               <Link
                 href="https://devias.io/"
                 target="_blank"
