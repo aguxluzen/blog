@@ -2,10 +2,8 @@ import React from 'react';
 import { Switch, Redirect } from 'react-router-dom';
 
 import { RouteWithLayout } from './components';
-import { Main as MainLayout } from './layouts';
-import { Home as HomeView, Settings as SettingsView,
-  Sections as SectionsView, Community as CommunityView,
-  Institutional as InstitutionalView, Contact as ContactView } from './views';
+import { Main } from './layouts';
+import { Home, Settings, Sections, Community, Institutional , Contact } from './views';
 
 const Routes = () => {
   return (
@@ -16,39 +14,39 @@ const Routes = () => {
         to="/home"
       />
       <RouteWithLayout
-        component={HomeView}
+        component={Home}
         exact
-        layout={MainLayout}
+        layout={Main}
         path="/home"
       />
       <RouteWithLayout
-        component={SectionsView}
+        component={Sections}
         exact
-        layout={MainLayout}
+        layout={Main}
         path="/sections"
       />
       <RouteWithLayout
-        component={CommunityView}
+        component={Community}
         exact
-        layout={MainLayout}
+        layout={Main}
         path="/community"
       />
       <RouteWithLayout
-        component={InstitutionalView}
+        component={Institutional}
         exact
-        layout={MainLayout}
+        layout={Main}
         path="/institutional"
       />
       <RouteWithLayout
-        component={ContactView}
+        component={Contact}
         exact
-        layout={MainLayout}
+        layout={Main}
         path="/contact"
       />
       <RouteWithLayout
-        component={SettingsView}
+        component={Settings}
         exact
-        layout={MainLayout}
+        layout={Main}
         path="/settings"
       />
       <Redirect to="/not-found" />
