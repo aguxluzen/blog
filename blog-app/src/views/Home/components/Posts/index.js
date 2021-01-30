@@ -5,6 +5,14 @@ import { Grid, Box } from "@material-ui/core";
 import axios from "axios";
 import chunk from "lodash/chunk";
 
+const a = {
+  userId: 10,
+  id: 94,
+  title: "qui qui voluptates illo iste minima",
+  body:
+    "aspernatur expedita soluta quo ab ut similique\nexpedita dolores amet\nsed temporibus distinctio magnam saepe deleniti\nomnis facilis nam ipsum natus sint similique omnis",
+};
+
 const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 345,
@@ -46,36 +54,105 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function Posts({ posts }) {
+
+const getClassByIndex = (index) => {
+  switch (index) {
+    case 0:
+      // return classes.leftBox;
+      break;
+
+    case 1:
+      // return classes.centerBox;
+      break;
+
+    case 2:
+      // return classes.rightBox;
+      break;
+
+    default:
+      break;
+  }
+};
+
+const shouldShowPost = (post, index) => {
+  return post ? (
+    <Grid item xs={12} sm={4}>
+      <Box className={getClassByIndex(index)}>
+        <Post post={post} />
+      </Box>
+    </Grid>
+  ) : null;
+};
+
+const MyFuckingGroupOfPostShouldWorkInThisComponent = (props) => {
   const classes = useStyles();
+  const { group } = props;
+
+  const getClassByIndex = (index) => {
+    switch (index) {
+      case 0:
+        return classes.leftBox;
+        break;
+
+      case 1:
+        return classes.centerBox;
+        break;
+
+      case 2:
+        return classes.rightBox;
+        break;
+
+      default:
+        break;
+    }
+  };
+
+  const shouldShowPost = (post, index) => {
+    return post ? (
+      <Grid item xs={12} sm={4}>
+        <Box className={getClassByIndex(index)}>
+          <Post post={post} />
+        </Box>
+      </Grid>
+    ) : null;
+  };
 
   return (
     <>
+      <Grid container>
+        {group.map((post, index) => (
+          <>{shouldShowPost(post, index)}</>
+        ))}
+      </Grid>
+    </>
+  );
+};
+
+function Posts({ posts, group }) {
+  return (
+    <>
       {
+        /*
+        */
         //[{},{},{},{}]
         chunk(posts, 3)
           //[[{},{},{}],[{},{},{}]]
-          .map((postGroupOfThree) => (
-            <Grid container>
-              {/* resolver problema con el remanente */}
-              <Grid item xs={12} sm={4}>
-                <Box className={classes.leftBox}>
-                  <Post post={postGroupOfThree[0]} />
-                  
-                </Box>
-              </Grid>
-              <Grid item xs={12} sm={4}>
-                <Box className={classes.centerBox}>
-                  <Post post={postGroupOfThree[1]} />
-                </Box>
-              </Grid>
-              <Grid item xs={12} sm={4}>
-                <Box className={classes.rightBox}>
-                  <Post post={postGroupOfThree[2]} />
-                </Box>
-              </Grid>
-            </Grid>
-          ))
+            .map((postGroupOfThree) => {
+            return (
+              <MyFuckingGroupOfPostShouldWorkInThisComponent
+                group={postGroupOfThree}
+              />
+            );
+          })
+      }
+      {
+        // group.map((p, index) => {
+        //   return (
+        //     <>
+        //     {shouldShowPost(p,index)}
+        //     </>
+        //   )
+        // })
       }
     </>
   );

@@ -4,6 +4,7 @@ import { Box } from "@material-ui/core";
 import Carousel from "./components/Carousel";
 import Posts from "./components/Posts";
 import axios from "axios";
+import chunk from "lodash/chunk";
 
 const useStyles = makeStyles((theme) => ({
   cont: {
@@ -25,9 +26,7 @@ const Home = () => {
 
   const [posts, setPosts] = useState([]);
 
-  const handleOnClick = () => {
-    
-  }
+  const handleOnClick = () => {};
 
   useEffect(() => {
     axios
@@ -45,13 +44,17 @@ const Home = () => {
     <>
       <Carousel />
       {/* {posts.length > 0 ? ( */}
-        <Box className={classes.cont}>
-          <Posts posts={posts}/>
-        </Box>
+      <Box className={classes.cont}>
+        {/* {chunk(posts, 3)
+          //[[{},{},{}],[{},{},{}]]
+          .map((postGroupOfThree) => {
+            return <Posts group={postGroupOfThree} />;
+          })} */}
+        <Posts posts={posts}/>
+      </Box>
       {/* ) : null} */}
     </>
   );
 };
 
 export default Home;
-
