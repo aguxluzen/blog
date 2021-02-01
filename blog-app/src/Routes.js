@@ -1,24 +1,22 @@
-import React from 'react';
-import { Switch, Redirect } from 'react-router-dom';
+import { Switch, Redirect } from "react-router-dom";
 
-import { RouteWithLayout } from './components';
-import { Main } from './layouts';
-import { Home, Settings, Sections, Community, Institutional , Contact } from './views';
+import { RouteWithLayout } from "./components";
+import { Main } from "./layouts";
+import {
+  Home,
+  Settings,
+  Sections,
+  Community,
+  Institutional,
+  Contact,
+} from "./views";
+import PostView from "./views/Posts/Post";
 
 const Routes = () => {
   return (
     <Switch>
-      <Redirect
-        exact
-        from="/"
-        to="/home"
-      />
-      <RouteWithLayout
-        component={Home}
-        exact
-        layout={Main}
-        path="/home"
-      />
+      <Redirect exact from="/" to="/home" />
+      <RouteWithLayout component={Home} exact layout={Main} path="/home" />
       <RouteWithLayout
         component={Sections}
         exact
@@ -48,6 +46,12 @@ const Routes = () => {
         exact
         layout={Main}
         path="/settings"
+      />
+      <RouteWithLayout
+        component={PostView}  
+        exact
+        layout={Main}
+        path="/posts/:id"
       />
       <Redirect to="/not-found" />
     </Switch>

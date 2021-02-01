@@ -5,6 +5,10 @@ import Carousel from "./components/Carousel";
 import Posts from "./components/Posts";
 import axios from "axios";
 import chunk from "lodash/chunk";
+import ThemeContext from "../../context/theme/theme.context";
+import { PostsContext } from "../../context/posts/posts.provider";
+import { useQuery } from "react-query";
+import usePosts from "../../hooks/posts/usePosts";
 
 const useStyles = makeStyles((theme) => ({
   cont: {
@@ -21,38 +25,32 @@ const numeros = ['1','2']
 numeros.map(numero => parseInt(numero))
 
 */
+
 const Home = () => {
   const classes = useStyles();
 
-  const [posts, setPosts] = useState([]);
-
-  const handleOnClick = () => {};
-
-  useEffect(() => {
-    axios
-      .get("https://jsonplaceholder.typicode.com/posts")
-      .then((response) => {
-        console.log(response.data);
-        setPosts(response.data);
-      })
-      .catch((error) => {
-        console.error("TODO ESTA MAL");
-      });
-  }, []);
+  const { data, isLoading } = usePosts();
 
   return (
     <>
+      {/* <PostsContext.Consumer>
+        {(context) => {
+          console.log(context.posts);
+
+          return (
+            <>
+              <Carousel />
+              <Box className={classes.cont}>
+                <Posts posts={context.posts} />
+              </Box>
+            </>
+          );
+        }}
+      </PostsContext.Consumer> */}
       <Carousel />
-      {/* {posts.length > 0 ? ( */}
       <Box className={classes.cont}>
-        {/* {chunk(posts, 3)
-          //[[{},{},{}],[{},{},{}]]
-          .map((postGroupOfThree) => {
-            return <Posts group={postGroupOfThree} />;
-          })} */}
-        <Posts posts={posts}/>
+        {isLoading ? null : <Posts posts={data} />}
       </Box>
-      {/* ) : null} */}
     </>
   );
 };
