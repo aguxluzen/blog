@@ -76,7 +76,7 @@ const Main = (props) => {
       <Topbar />
       <main className={classes.content}>
         {children}
-        <Footer />
+        {/* <Footer /> */}
       </main>
     </div>
   );
