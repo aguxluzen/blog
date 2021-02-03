@@ -4,7 +4,7 @@ export default {
   h1: {
     color: palette.text.primary,
     fontWeight: 500,
-    fontSize: '35px',
+    fontSize: '50px',
     letterSpacing: '-0.24px',
     lineHeight: '40px'
   },

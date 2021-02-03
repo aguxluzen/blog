@@ -3,45 +3,68 @@ import { makeStyles } from "@material-ui/core/styles";
 import { useParams } from "react-router-dom";
 import usePost from "../../../hooks/posts/usePost";
 import { Grid, Box } from "@material-ui/core";
-import Card from "@material-ui/core/Card";
-import CardActionArea from "@material-ui/core/CardActionArea";
-import CardContent from "@material-ui/core/CardContent";
-import CardMedia from "@material-ui/core/CardMedia";
-import Typography from "@material-ui/core/Typography";
-import Post from "../../../views/Home/components/Posts/Post";
+import { Typography } from "@material-ui/core";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
     root: {
-        height: "50vh",
-        marginDown: "5vh",
-        width:"50%",
-      },
+      padding: theme.spacing(4),
+    },
       content: {
         display: "flex",
-        widht: "100%",
-        
-        background: "gray",
+        height: "50vh",
         marginRight: "5vw",
         marginLeft: "5vw",
+        background: "#e3f2fd",
+        justifyContent:"center",
       },
-    });
+      content1: {
+        display: "flex",
+        height: "100vh",
+        background: "#e3f2fd",
+        marginRight: "5vw",
+        marginLeft: "5vw",
+        marginTop: "5vh",
+        marginBottom:"5vh",
+        justifyContent:"center",
+      },
+      id: {
+        marginTop:"15vh",
+        alignSelf:"center",
+      },
+    }));
 
-function PostView() {
+const PostView = () => {
     const classes = useStyles();
     const { id } = useParams();
-    const { data, isLoading } = usePost(id);
-
+    const { data , isLoading } = usePost(id);
     return (
         <>
-        <Box className={classes.content}>
-            <Typography>
-                <h1>
-
-                {data.body}
-                </h1>
-            </Typography>
-        </Box>
+        <Grid>
+            <Grid className={classes.content}>
+                <Box style={{marginTop:"10vh"}}>
+                    <div className={classes.text}>
+                    <Typography variant="h1" component="h2" >
+                    vivir solo cuesta vida
+                    </Typography>
+                    </div>
+                    <div className={classes.id}>
+                    <Typography variant="h5" component="h5" >
+                        1
+                    </Typography>
+                    </div>
+                </Box>  
+            </Grid>
+            <Grid className={classes.content1}>
+                <Box style={{marginTop:"10vh"}}>
+                    <div className={classes.text}>
+                    <Typography variant="h1" component="h2" >
+                        cuanto mas vivir asi cuanto te puede costar
+                    </Typography>
+                    </div>
+                </Box>  
+            </Grid>
+        </Grid>
         </>
-    )        
+    );      
 }
 export default PostView; 

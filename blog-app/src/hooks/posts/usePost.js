@@ -4,7 +4,10 @@ import { useQuery } from "react-query";
 const getPost = (postId) => {
   return axios
     .get(`https://jsonplaceholder.typicode.com/posts/${postId}`)
-    .then((response) => response.data);
+    .then((response) => response.data)
+    .catch((error) => {
+      console.error("TODO ESTA MAL");
+    });
 };
 
 export default function usePost(postId) {

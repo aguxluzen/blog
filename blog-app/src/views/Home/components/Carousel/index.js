@@ -12,11 +12,9 @@ const useStyles = makeStyles((theme) => ({
   },
   container: {
     display:"flex",
-    flexDirection:"row-reverse",
   },
   text: {
     position: "absolute",
-    alignMargin: "center",
     marginRight: '5vw',
     marginLeft: '5vw',
   },
