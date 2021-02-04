@@ -1,10 +1,10 @@
 const { searchPosts } = require("../providers/posts.provider");
 
-function getPostsController(req, res, next) {
+async function getPostsController(req, res, next) {
   //anda pegale a sql y busca datos
   //ordena los datos
   try {
-    const posts = searchPosts();
+    const posts = await searchPosts();
     res.status(200).json(posts);
   } catch (err) {
     console.error(err);

@@ -1,6 +1,6 @@
 {
   "packages": [
-    "blog-*"
+    "blog*"
   ],
   "version": "independent"
 }

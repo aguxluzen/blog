@@ -1,4 +1,20 @@
-function searchPosts() {
+const db = require('blog-db')
+
+async function searchPosts() {
+  const { Post } = await db({
+    database: process.env.DATABASE || "blogDB",
+    username: process.env.USERNAME || "root",
+    password: "root",
+    host: "127.0.0.1",
+    port: "3308",
+    dialect: "mysql",
+    setup: true,
+  }).catch((err) => {
+    console.error(err);
+    process.exit(1);
+  });
+
+
   return [
     {
       userId: 1,
