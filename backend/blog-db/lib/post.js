@@ -24,7 +24,12 @@ module.exports = function setupPost(PostModel) {
   }
 
   function findAll() {
-    return PostModel.findAll()
+    //TODO
+  }
+  
+  function findOne(){
+    //TODO
+    
   }
 
   return {
