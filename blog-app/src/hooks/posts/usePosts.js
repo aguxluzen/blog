@@ -3,7 +3,7 @@ import { useQuery } from "react-query";
 
 const getPosts = () =>
   axios
-    .get("https://jsonplaceholder.typicode.com/posts")
+    .get("/api/posts")
     .then((response) => {
       return response.data;
     })

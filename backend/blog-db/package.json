@@ -1,0 +1,15 @@
+{
+  "name": "blog-db",
+  "version": "1.0.0",
+  "description": "Libreria de base de datos para blog",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.5.0"
+  }
+}
