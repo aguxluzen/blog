@@ -10,7 +10,7 @@ async function run() {
     host: "127.0.0.1",
     port: "3308",
     dialect: "mysql",
-    setup: true,
+    setup: false,
   }).catch((err) => {
     console.error(err);
     process.exit(1);
