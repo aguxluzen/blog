@@ -5,11 +5,11 @@ const db = require("./");
 async function setup() {
   await db({
     database: process.env.DATABASE || "blogDB",
-    username: process.env.USERNAME || "root",
-    password: "root",
+    username: process.env.USERNAME || "postgres",
+    password: "datalake",
     host: "127.0.0.1",
-    port: "3308",
-    dialect: "mysql",
+    port: "5432",
+    dialect: "postgres",
     setup: true,
   }).catch((err) => {
     console.error(err);
